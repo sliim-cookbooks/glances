@@ -13,8 +13,3 @@ suites:
   - name: default
     run_list:
       - recipe[glances]
-    attributes:
-      glances:
-        config:
-          cpu:
-            user_careful: 50

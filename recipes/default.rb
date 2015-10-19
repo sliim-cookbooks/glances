@@ -10,10 +10,22 @@ include_recipe 'python'
 
 python_pip 'glances'
 
-template '/etc/glances' do
-  source 'glances.erb'
+directory '/etc/glances' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
+template '/etc/glances/glances.conf' do
+  source 'glances.conf.erb'
   owner 'root'
   group 'root'
   mode '0644'
-  not_if { node['glances']['config'].empty? }
+end
+
+template '/etc/default/glances' do
+  source 'glances.default.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
 end

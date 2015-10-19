@@ -18,10 +18,22 @@ Installs/Configures [glances](https://github.com/nicolargo/glances) on your serv
     <th>Default</th>
   </tr>
   <tr>
+    <td><tt>['glances']['daemon']['args']</tt></td>
+    <td>String</td>
+    <td>Arguments for server mode</td>
+    <td><tt>-s</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['glances']['daemon']['run']</tt></td>
+    <td>Boolean</td>
+    <td>Run glances at startup</td>
+    <td><tt>false</tt></td>
+  </tr>
+  <tr>
     <td><tt>['glances']['config']</tt></td>
     <td>Hash</td>
     <td>Optional glances configuration</td>
-    <td><tt>{}</tt></td>
+    <td><tt>Default glances config</tt></td>
   </tr>
 </table>
 
