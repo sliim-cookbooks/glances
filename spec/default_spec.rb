@@ -19,6 +19,10 @@ describe 'glances::default' do
     expect(subject).to install_python_pip('glances')
   end
 
+  it 'installs python_pip[pystache]' do
+    expect(subject).to install_python_pip('pystache')
+  end
+
   it 'creates directory[/etc/glances]' do
     expect(subject).to create_directory('/etc/glances')
       .with(owner: 'root',

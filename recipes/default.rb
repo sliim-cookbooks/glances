@@ -10,6 +10,10 @@ include_recipe 'python'
 
 python_pip 'glances'
 
+node['glances']['extra_pip_packages'].each do |pkg|
+  python_pip pkg
+end
+
 directory '/etc/glances' do
   owner 'root'
   group 'root'

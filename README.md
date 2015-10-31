@@ -35,6 +35,12 @@ Installs/Configures [glances](https://github.com/nicolargo/glances) on your serv
     <td>Optional glances configuration</td>
     <td><tt>Default glances config</tt></td>
   </tr>
+  <tr>
+    <td><tt>['glances']['extra_pip_packages']</tt></td>
+    <td>Array</td>
+    <td>List of extra packages</td>
+    <td><tt>[pystache]</tt></td>
+  </tr>
 </table>
 
 ## Usage

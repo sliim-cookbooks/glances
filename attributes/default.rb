@@ -6,6 +6,8 @@
 # Copyright 2015, Sliim
 #
 
+default['glances']['extra_pip_packages'] = %w(pystache)
+
 default['glances']['daemon']['args'] = '-s'
 default['glances']['daemon']['run'] = false
 
