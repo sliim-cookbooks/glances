@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 0.3.0
+- New attribute: `[glances][extra_pip_packages]`
+
 ## 0.2.0
 - Glances configuration improved
 
