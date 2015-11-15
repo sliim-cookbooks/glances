@@ -7,41 +7,18 @@ Installs/Configures [glances](https://github.com/nicolargo/glances) on your serv
 #### cookbooks
 - `python`
 
+## Recommended cookbooks:
+- `build-essential`
+
 ## Attributes
 
 #### glances::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['glances']['daemon']['args']</tt></td>
-    <td>String</td>
-    <td>Arguments for server mode</td>
-    <td><tt>-s</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['glances']['daemon']['run']</tt></td>
-    <td>Boolean</td>
-    <td>Run glances at startup</td>
-    <td><tt>false</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['glances']['config']</tt></td>
-    <td>Hash</td>
-    <td>Optional glances configuration</td>
-    <td><tt>Default glances config</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['glances']['extra_pip_packages']</tt></td>
-    <td>Array</td>
-    <td>List of extra packages</td>
-    <td><tt>[pystache]</tt></td>
-  </tr>
-</table>
+|              Key              |  Type   |                 Description                  |
+| ----------------------------- | ------- | -------------------------------------------- |
+| [glances][daemon][args]       | String  | Arguments for server mode (default: -s)      |
+| [glances][daemon][run]        | Boolean | Run glances at startup (default: false)      |
+| [glances][config]             | Hash    | Glances configuration                        |
+| [glances][extra_pip_packages] | Array   | List of extra packages (default: [pystache]) |
 
 ## Usage
 
