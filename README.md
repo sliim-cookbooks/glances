@@ -29,10 +29,11 @@ The following platforms and versions are tested and supported using Opscode's te
 #### glances::default
 |               Key               |  Type   |                 Description                  |
 | ------------------------------- | ------- | -------------------------------------------- |
-| `[glances][daemon][args]`       | String  | Arguments for server mode (default: -s)      |
-| `[glances][daemon][run]`        | Boolean | Run glances at startup (default: false)      |
-| `[glances][config]`             | Hash    | Glances configuration                        |
 | `[glances][extra_pip_packages]` | Array   | List of extra packages (default: [pystache]) |
+| `[glances][version]`            | String  | Glances package version (default: nil)       |
+| `[glances][config]`             | Hash    | Glances configuration                        |
+| `[glances][daemon][run]`        | Boolean | Run glances at startup (default: false)      |
+| `[glances][daemon][args]`       | String  | Arguments for server mode (default: -s)      |
 
 ## Usage
 

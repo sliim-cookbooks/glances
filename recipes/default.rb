@@ -8,7 +8,9 @@
 
 include_recipe 'python'
 
-python_pip 'glances'
+python_pip 'glances' do
+  version node['glances']['version']
+end
 
 node['glances']['extra_pip_packages'].each do |pkg|
   python_pip pkg

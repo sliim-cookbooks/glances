@@ -16,7 +16,7 @@ describe 'glances::default' do
   end
 
   it 'installs python_pip[glances]' do
-    expect(subject).to install_python_pip('glances')
+    expect(subject).to install_python_pip('glances').with(version: nil)
   end
 
   it 'installs python_pip[pystache]' do
@@ -50,6 +50,18 @@ describe 'glances::default' do
             mode: '0644')
     [/^DAEMON_ARGS="--server"$/, /^RUN="true"$/].each do |m|
       expect(subject).to render_file('/etc/default/glances').with_content(m)
+    end
+  end
+
+  context 'with package version' do
+    let(:subject) do
+      ChefSpec::SoloRunner.new do |node|
+        node.set['glances']['version'] = '2.4.2'
+      end.converge(described_recipe)
+    end
+
+    it 'installs python_pip[glances]' do
+      expect(subject).to install_python_pip('glances').with(version: '2.4.2')
     end
   end
 end

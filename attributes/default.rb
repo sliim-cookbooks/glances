@@ -7,9 +7,10 @@
 #
 
 default['glances']['extra_pip_packages'] = %w(pystache)
+default['glances']['version'] = nil
 
-default['glances']['daemon']['args'] = '-s'
 default['glances']['daemon']['run'] = false
+default['glances']['daemon']['args'] = '-s'
 
 default['glances']['config'] = {
   cpu: {
