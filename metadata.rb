@@ -11,6 +11,7 @@ recipe 'default', 'Installs/Configures glances'
 
 depends 'python'
 
+supports 'ubuntu', '>= 12.04'
 supports 'debian', '>= 7.0'
 
 source_url 'https://github.com/sliim-cookbooks/glances' if

@@ -7,18 +7,26 @@ Installs/Configures [glances](https://github.com/nicolargo/glances) on your serv
 #### cookbooks
 - `python`
 
+#### Platforms
+The following platforms and versions are tested and supported using Opscode's test-kitchen:
+- Ubuntu 12.04
+- Ubuntu 14.04
+- Debian 7
+- Debian 8
+
 ## Recommended cookbooks:
+- `apt`
 - `build-essential`
 
 ## Attributes
 
 #### glances::default
-|              Key              |  Type   |                 Description                  |
-| ----------------------------- | ------- | -------------------------------------------- |
-| [glances][daemon][args]       | String  | Arguments for server mode (default: -s)      |
-| [glances][daemon][run]        | Boolean | Run glances at startup (default: false)      |
-| [glances][config]             | Hash    | Glances configuration                        |
-| [glances][extra_pip_packages] | Array   | List of extra packages (default: [pystache]) |
+|               Key               |  Type   |                 Description                  |
+| ------------------------------- | ------- | -------------------------------------------- |
+| `[glances][daemon][args]`       | String  | Arguments for server mode (default: -s)      |
+| `[glances][daemon][run]`        | Boolean | Run glances at startup (default: false)      |
+| `[glances][config]`             | Hash    | Glances configuration                        |
+| `[glances][extra_pip_packages]` | Array   | List of extra packages (default: [pystache]) |
 
 ## Usage
 
