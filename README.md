@@ -7,16 +7,22 @@ Installs/Configures [glances](https://github.com/nicolargo/glances) on your serv
 #### cookbooks
 - `python`
 
+## Recommended cookbooks:
+- `apt` for debian/ubuntu platforms
+- `build-essential` for all platforms
+
 #### Platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen:
 - Ubuntu 12.04
 - Ubuntu 14.04
+- Debian 6
 - Debian 7
 - Debian 8
-
-## Recommended cookbooks:
-- `apt`
-- `build-essential`
+- Centos 5
+- Centos 6
+- Centos 7
+- Fedora 20
+- Fedora 21
 
 ## Attributes
 

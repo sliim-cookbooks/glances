@@ -14,13 +14,33 @@ platforms:
   - name: ubuntu-14.04
     run_list:
       - recipe[apt]
+  - name: debian-6
+    attributes:
+      glances:
+        extra_pip_packages: # For python 2.6
+          - logutils
+          - argparse
   - name: debian-7
   - name: debian-8
+  - name: centos-5
     run_list:
-      - recipe[build-essential]
-
+    attributes:
+      glances:
+        extra_pip_packages:
+          - logutils
+          - argparse
+  - name: centos-6
+    attributes:
+      glances:
+        extra_pip_packages:
+          - logutils
+          - argparse
+  - name: centos-7
+  - name: fedora-20
+  - name: fedora-21
 
 suites:
-  - name: default
+  - name: glances
     run_list:
+      - recipe[build-essential]
       - recipe[glances]
