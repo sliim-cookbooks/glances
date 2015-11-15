@@ -1,6 +1,6 @@
 # glances Cookbook | [![Cookbook Version](https://img.shields.io/cookbook/v/glances.svg)](https://community.opscode.com/cookbooks/glances) [![Build Status](https://travis-ci.org/sliim-cookbooks/glances.svg?branch=master)](https://travis-ci.org/sliim-cookbooks/glances) 
 
-Installs/Configures [glances](https://github.com/nicolargo/glances) on your server!
+Installs/Configures [glances](http://nicolargo.github.io/glances/) on your server!
 
 ## Requirements
 
