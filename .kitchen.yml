@@ -44,3 +44,11 @@ suites:
     run_list:
       - recipe[build-essential]
       - recipe[glances]
+  - name: glances-service
+    run_list:
+      - recipe[build-essential]
+      - recipe[glances::service]
+    attributes:
+      glances:
+        service:
+          RUN: true

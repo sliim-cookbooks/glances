@@ -28,10 +28,3 @@ template '/etc/glances/glances.conf' do
   group 'root'
   mode '0644'
 end
-
-template '/etc/default/glances' do
-  source 'glances.default.erb'
-  owner 'root'
-  group 'root'
-  mode '0644'
-end

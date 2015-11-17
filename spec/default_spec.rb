@@ -6,8 +6,6 @@ describe 'glances::default' do
   let(:subject) do
     ChefSpec::SoloRunner.new do |node|
       node.set['glances']['config'] = { cpu: { user_careful: 50 } }
-      node.set['glances']['daemon']['run'] = true
-      node.set['glances']['daemon']['args'] = '--server'
     end.converge(described_recipe)
   end
 
@@ -39,17 +37,6 @@ describe 'glances::default' do
     [/^\[cpu\]$/, /^user_careful=50$/].each do |m|
       expect(subject).to render_file('/etc/glances/glances.conf')
         .with_content(m)
-    end
-  end
-
-  it 'creates template[/etc/default/glances]' do
-    expect(subject).to create_template('/etc/default/glances')
-      .with(source: 'glances.default.erb',
-            owner: 'root',
-            group: 'root',
-            mode: '0644')
-    [/^DAEMON_ARGS="--server"$/, /^RUN="true"$/].each do |m|
-      expect(subject).to render_file('/etc/default/glances').with_content(m)
     end
   end
 
