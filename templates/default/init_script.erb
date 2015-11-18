@@ -26,18 +26,18 @@ DAEMON_ARGS="-C $CONF -s"
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0
 
-# Load the VERBOSE setting and other rcS variables
-. /lib/init/vars.sh
-
-# Define LSB log_* functions.
-# Depend on lsb-base (>= 3.2-14) to ensure that this file is present
-# and status_of_proc is working.
+# Source function library.
+<% case node[:platform_family] -%>
+<% when 'rhel', 'fedora' -%>
+. /etc/rc.d/init.d/functions
+<% else -%>
 . /lib/lsb/init-functions
+<% end -%>
 
 # Ensure /run/glances is there, cf. Debian policy 9.4.1
 # http://www.debian.org/doc/debian-policy/ch-opersys.html#s-fhs-run
 if [ ! -d "$(dirname $PIDFILE)" ]; then
-    mkdir "$(dirname $PIDFILE)"
+    mkdir -p "$(dirname $PIDFILE)"
     chown $USER:$USER "$(dirname $PIDFILE)"
     chmod 755 "$(dirname $PIDFILE)"
 fi

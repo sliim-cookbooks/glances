@@ -25,9 +25,9 @@ describe 'glances::service' do
       end
   end
 
-  it 'creates cookbook_file[/etc/init.d/glances]' do
+  it 'creates template[/etc/init.d/glances]' do
     expect(subject).to create_cookbook_file('/etc/init.d/glances')
-      .with(source: 'init_script',
+      .with(source: 'init_script.erb',
             owner: 'root',
             group: 'root',
             mode: '0755')

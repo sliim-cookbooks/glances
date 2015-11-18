@@ -8,6 +8,8 @@
 
 include_recipe 'glances'
 
+user 'glances'
+
 template '/etc/default/glances' do
   source 'glances.default.erb'
   owner 'root'
@@ -15,8 +17,8 @@ template '/etc/default/glances' do
   mode '0644'
 end
 
-cookbook_file '/etc/init.d/glances' do
-  source 'init_script'
+template '/etc/init.d/glances' do
+  source 'init_script.erb'
   owner 'root'
   group 'root'
   mode '0755'

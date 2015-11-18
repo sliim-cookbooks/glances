@@ -45,6 +45,11 @@ suites:
       - recipe[build-essential]
       - recipe[glances]
   - name: glances-service
+    excludes:
+      # FIXME: systemd support for these platforms:
+      - centos-7
+      - fedora-20
+      - fedora-21
     run_list:
       - recipe[build-essential]
       - recipe[glances::service]

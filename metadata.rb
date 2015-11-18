@@ -8,6 +8,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.3.0'
 
 recipe 'default', 'Installs/Configures glances'
+recipe 'service', 'Glances service for server setup'
 
 depends 'python'
 
