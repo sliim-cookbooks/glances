@@ -1,3 +1,4 @@
+# <% load "#{File.dirname(__FILE__)}/test/kitchen-docker.rb" %>
 ---
 driver:
   name: docker
@@ -23,7 +24,6 @@ platforms:
   - name: debian-7
   - name: debian-8
   - name: centos-5
-    run_list:
     attributes:
       glances:
         extra_pip_packages:
@@ -36,6 +36,12 @@ platforms:
           - logutils
           - argparse
   - name: centos-7
+    driver_config:
+      dockerfile: test/dockerfiles/centos7
+      privileged: true
+      run_command: /usr/sbin/init
+      private_key:
+      public_key:
   - name: fedora-20
   - name: fedora-21
 
@@ -47,7 +53,6 @@ suites:
   - name: glances-service
     excludes:
       # FIXME: systemd support for these platforms:
-      - centos-7
       - fedora-20
       - fedora-21
     run_list:

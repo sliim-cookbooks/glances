@@ -15,7 +15,7 @@ group :unit do
 end
 
 group :kitchen do
-  gem 'test-kitchen'
+  gem 'test-kitchen', '= 1.4.2'
   gem 'kitchen-docker', '=2.3.0'
 end
 
