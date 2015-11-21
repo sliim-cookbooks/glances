@@ -32,8 +32,11 @@ The following platforms and versions are tested and supported using Opscode's te
 | `[glances][extra_pip_packages]` | Array   | List of extra packages (default: [pystache]) |
 | `[glances][version]`            | String  | Glances package version (default: nil)       |
 | `[glances][config]`             | Hash    | Glances configuration                        |
-| `[glances][daemon][run]`        | Boolean | Run glances at startup (default: false)      |
-| `[glances][daemon][args]`       | String  | Arguments for server mode (default: -s)      |
+
+#### glances::service
+|          Key         | Type |           Description          |
+| -------------------- | ---- | ------------------------------ |
+| `[glances][service]` | Hash | Hash for service configuration |
 
 ## Usage
 
