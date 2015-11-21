@@ -20,7 +20,7 @@ describe 'glances::service' do
             owner: 'root',
             group: 'root',
             mode: '0644')
-    [/^DAEMON_ARGS=--server$/, /^RUN=true$/].each do |m|
+    [/^DAEMON_ARGS="--server"$/, /^RUN="true"$/].each do |m|
       expect(subject).to render_file('/etc/default/glances').with_content(m)
     end
   end
