@@ -18,7 +18,7 @@ platforms:
   - name: debian-6
     attributes:
       glances:
-        extra_pip_packages: # For python 2.6
+        extra_pip_packages:
           - logutils
           - argparse
   - name: debian-7
