@@ -13,16 +13,16 @@ Installs/Configures [glances](http://nicolargo.github.io/glances/) on your serve
 
 #### Platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen:
-- Ubuntu 12.04
-- Ubuntu 14.04
-- Debian 6
-- Debian 7
-- Debian 8
-- Centos 5
-- Centos 6
-- Centos 7
-- Fedora 20
-- Fedora 21
+- `Ubuntu 12.04`
+- `Ubuntu 14.04`
+- `Debian 6`
+- `Debian 7`
+- `Debian 8`
+- `Centos 5`
+- `Centos 6`
+- `Centos 7`
+- `Fedora 20`
+- `Fedora 21`
 
 ## Attributes
 

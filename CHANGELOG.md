@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 1.0.1
+- Fixed specs..
+
 ## 1.0.0
 - `glances::service` recipe to setup glances service
 - Supports `ubuntu`, `debian`, `centos` and `fedora` platforms
