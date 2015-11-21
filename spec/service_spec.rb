@@ -22,11 +22,11 @@ describe 'glances::service' do
             mode: '0644')
     [/^DAEMON_ARGS=--server$/, /^RUN=true$/].each do |m|
       expect(subject).to render_file('/etc/default/glances').with_content(m)
-      end
+    end
   end
 
   it 'creates template[/etc/init.d/glances]' do
-    expect(subject).to create_cookbook_file('/etc/init.d/glances')
+    expect(subject).to create_template('/etc/init.d/glances')
       .with(source: 'init_script.erb',
             owner: 'root',
             group: 'root',
