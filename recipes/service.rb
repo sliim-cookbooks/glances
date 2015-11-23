@@ -28,3 +28,10 @@ service 'glances' do
   action [:enable, :start]
   supports status: true, start: true, stop: true, restart: true
 end
+
+execute 'systemctl-daemon-reload' do
+  action :nothing
+  command 'systemctl daemon-reload'
+  subscribes :run, 'template[/etc/init.d/glances]', :immediately
+  only_if { node['init_package'] == 'systemd' }
+end
