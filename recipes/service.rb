@@ -8,7 +8,12 @@
 
 include_recipe 'glances'
 
-user 'glances'
+user 'glances' do
+  home '/etc/glances'
+  comment 'Glances monitoring'
+  supports manage_home: false
+  system true
+end
 
 template '/etc/default/glances' do
   source 'glances.default.erb'

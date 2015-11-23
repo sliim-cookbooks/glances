@@ -14,6 +14,12 @@ describe 'glances::service' do
     expect(subject).to include_recipe('glances')
   end
 
+  it 'creates user[glances]' do
+    expect(subject).to create_user('glances')
+      .with(home: '/etc/glances',
+            system: true)
+  end
+
   it 'creates template[/etc/default/glances]' do
     expect(subject).to create_template('/etc/default/glances')
       .with(source: 'glances.default.erb',
