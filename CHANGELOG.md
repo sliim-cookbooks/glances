@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 1.0.3
+- Restart glances service when configuration or init script changed
+
 ## 1.0.2
 - Reload daemon for systemd service
 - Set system user for glances service
