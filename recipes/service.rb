@@ -20,6 +20,7 @@ template '/etc/default/glances' do
   owner 'root'
   group 'root'
   mode '0644'
+  notifies :restart, 'service[glances]', :delayed
 end
 
 template '/etc/init.d/glances' do
@@ -27,6 +28,7 @@ template '/etc/init.d/glances' do
   owner 'root'
   group 'root'
   mode '0755'
+  notifies :restart, 'service[glances]', :delayed
 end
 
 service 'glances' do
