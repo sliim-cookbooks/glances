@@ -10,11 +10,7 @@ provisioner:
 
 platforms:
   - name: ubuntu-12.04
-    run_list:
-      - recipe[apt]
   - name: ubuntu-14.04
-    run_list:
-      - recipe[apt]
   - name: debian-6
     attributes:
       glances:
@@ -48,6 +44,7 @@ platforms:
 suites:
   - name: glances
     run_list:
+      - recipe[apt]
       - recipe[build-essential]
       - recipe[glances]
   - name: glances-service
@@ -56,6 +53,7 @@ suites:
       - fedora-20
       - fedora-21
     run_list:
+      - recipe[apt]
       - recipe[build-essential]
       - recipe[glances::service]
     attributes:
