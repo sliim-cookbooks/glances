@@ -27,12 +27,7 @@ DAEMON_ARGS="-C $CONF -s"
 [ -x "$DAEMON" ] || exit 0
 
 # Source function library.
-<% case node['platform_family'] -%>
-<% when 'rhel', 'fedora' -%>
-. /etc/rc.d/init.d/functions
-<% else -%>
 . /lib/lsb/init-functions
-<% end -%>
 
 # Ensure /run/glances is there, cf. Debian policy 9.4.1
 # http://www.debian.org/doc/debian-policy/ch-opersys.html#s-fhs-run
@@ -42,21 +37,14 @@ if [ ! -d "$(dirname $PIDFILE)" ]; then
     chmod 755 "$(dirname $PIDFILE)"
 fi
 
-#
-# Function that starts the daemon/service
-#
 do_start()
 {
     log_daemon_msg "Starting $DESC" "$NAME "
-    # Return
-    #   0 if daemon has been started
-    #   1 if daemon was already running
-    #   2 if daemon could not be started
     [ -e $PIDFILE ] && PID=$(cat "$PIDFILE")
     if ( [ -e $PIDFILE ] && ps -p $PID 1>&2 > /dev/null )
     then
         log_action_end_msg 1 "already running, PID's $PID"
-        exit 0
+        exit 1
     elif ( [ -w $PIDFILE ] )
     then
         log_warning_msg "PID file found while ${NAME} is not running, removing file."
@@ -65,44 +53,33 @@ do_start()
 
     if [ "$RUN" != "true" ]; then
         log_action_msg "Not starting glances: disabled by /etc/default/$NAME".
-        exit 0
+        exit 2
     fi
 
-    start-stop-daemon --start --chuid $USER --pidfile=$PIDFILE --quiet -m -b --exec $DAEMON -- $DAEMON_ARGS || return 2
+    start-stop-daemon --start --chuid $USER --pidfile=$PIDFILE --quiet -m -b --exec $DAEMON -- $DAEMON_ARGS || exit 2
     [ -e "$PIDFILE" ] && chown $USER $PIDFILE
-    return 0
+    exit 0
 }
 
-#
-# Function that stops the daemon/service
-#
 do_stop()
 {
     log_daemon_msg "Stopping $DESC" "$NAME "
     if [ ! -w $PIDFILE ]
     then
         log_warning_msg "PID file not found"
-        return 4
+        exit 1
     fi
-    start-stop-daemon --stop --oknodo --chuid $USER --pidfile=$PID --user=$USER --pidfile="$PIDFILE" --retry=30 || return 1
+    start-stop-daemon --stop --oknodo --chuid $USER --user=$USER --pidfile=$PIDFILE --retry=30 || exit 1
     /bin/rm -f $PIDFILE
-    return 0
+    exit 0
 }
 
 case "$1" in
   start)
     do_start
-    case "$?" in
-        0|1) log_end_msg 0 ;;
-        2) log_end_msg 1 ;;
-    esac
     ;;
   stop)
     do_stop
-    case "$?" in
-        0) log_end_msg 0 ;;
-        1) log_end_msg 1 ;;
-    esac
     ;;
   status)
     status_of_proc -p "$PIDFILE" "$DAEMON" "$NAME"
@@ -113,13 +90,8 @@ case "$1" in
       0)
         log_end_msg 0
         do_start
-        case "$?" in
-            0) log_end_msg 0 ;;
-            *) log_end_msg 1 ;; # Failed to start
-        esac
         ;;
       *)
-        # Failed to stop
         log_end_msg 1
         ;;
     esac
