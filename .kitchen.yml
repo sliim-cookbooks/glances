@@ -25,13 +25,21 @@ platforms:
         extra_pip_packages:
           - logutils
           - argparse
+        service:
+          DAEMON: /usr/bin/glances
   - name: centos-6
     attributes:
       glances:
         extra_pip_packages:
           - logutils
           - argparse
+        service:
+          DAEMON: /usr/bin/glances
   - name: centos-7
+    attributes:
+      glances:
+        service:
+          DAEMON: /usr/bin/glances
     driver_config:
       dockerfile: test/dockerfiles/centos7
       privileged: true
