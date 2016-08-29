@@ -44,7 +44,7 @@ do_start()
     if ( [ -e $PIDFILE ] && ps -p $PID 1>&2 > /dev/null )
     then
         log_action_end_msg 1 "already running, PID's $PID"
-        exit 1
+        return 1
     elif ( [ -w $PIDFILE ] )
     then
         log_warning_msg "PID file found while ${NAME} is not running, removing file."
@@ -53,12 +53,11 @@ do_start()
 
     if [ "$RUN" != "true" ]; then
         log_action_msg "Not starting glances: disabled by /etc/default/$NAME".
-        exit 2
+        return 2
     fi
 
     start-stop-daemon --start --chuid $USER --pidfile=$PIDFILE --quiet -m -b --exec $DAEMON -- $DAEMON_ARGS || exit 2
     [ -e "$PIDFILE" ] && chown $USER $PIDFILE
-    exit 0
 }
 
 do_stop()
@@ -67,11 +66,10 @@ do_stop()
     if [ ! -w $PIDFILE ]
     then
         log_warning_msg "PID file not found"
-        exit 1
+        return 1
     fi
     start-stop-daemon --stop --oknodo --chuid $USER --user=$USER --pidfile=$PIDFILE --retry=30 || exit 1
     /bin/rm -f $PIDFILE
-    exit 0
 }
 
 case "$1" in

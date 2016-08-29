@@ -47,7 +47,7 @@ do_start()
     if ( [ -e $PIDFILE ] && ps -p $PID 1>&2 > /dev/null )
     then
         failure "already running, PID's $PID"
-        exit 1
+        return 1
     elif ( [ -w $PIDFILE ] )
     then
         warning "PID file found while ${NAME} is not running, removing file."
@@ -56,13 +56,12 @@ do_start()
 
     if [ "$RUN" != "true" ]; then
         passed "Not starting glances: disabled by /etc/default/$NAME".
-        exit 2
+        return 2
     fi
 
     su - $USER -c "setsid $DAEMON $DAEMON_ARGS &>/dev/null & jobs -p %1 > $PIDFILE"
     [ -e "$PIDFILE" ] && chown $USER $PIDFILE
     success "$NAME started"
-    exit 0
 }
 
 do_stop()
@@ -71,11 +70,10 @@ do_stop()
     if [ ! -w $PIDFILE ]
     then
         warning "PID file not found"
-        exit 1
+        return 1
     fi
     killproc -p $PIDFILE bash
     /bin/rm -f $PIDFILE
-    exit 0
 }
 
 case "$1" in
