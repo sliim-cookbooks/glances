@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 1.0.5
+- Fix service restart: Do not exit init scripts from function
+
 ## 1.0.4
 - Fix centos init script
 
