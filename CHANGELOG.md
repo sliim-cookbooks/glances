@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 1.0.6
+- return 0 at the end of do_stop/do_start init scripts functions
+
 ## 1.0.5
 - Fix service restart: Do not exit init scripts from function
 
