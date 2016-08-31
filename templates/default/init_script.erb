@@ -58,6 +58,7 @@ do_start()
 
     start-stop-daemon --start --chuid $USER --pidfile=$PIDFILE --quiet -m -b --exec $DAEMON -- $DAEMON_ARGS || exit 2
     [ -e "$PIDFILE" ] && chown $USER $PIDFILE
+    return 0
 }
 
 do_stop()
@@ -70,6 +71,7 @@ do_stop()
     fi
     start-stop-daemon --stop --oknodo --chuid $USER --user=$USER --pidfile=$PIDFILE --retry=30 || exit 1
     /bin/rm -f $PIDFILE
+    return 0
 }
 
 case "$1" in

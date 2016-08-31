@@ -62,6 +62,7 @@ do_start()
     su - $USER -c "setsid $DAEMON $DAEMON_ARGS &>/dev/null & jobs -p %1 > $PIDFILE"
     [ -e "$PIDFILE" ] && chown $USER $PIDFILE
     success "$NAME started"
+    return 0
 }
 
 do_stop()
@@ -74,6 +75,7 @@ do_stop()
     fi
     killproc -p $PIDFILE bash
     /bin/rm -f $PIDFILE
+    return 0
 }
 
 case "$1" in
