@@ -14,6 +14,7 @@ The following platforms and versions are tested and supported using Opscode's te
 - `Debian 6`
 - `Debian 7`
 - `Debian 8`
+- `Debian 9`
 - `Centos 5`
 - `Centos 6`
 - `Centos 7`
@@ -235,7 +236,7 @@ You can use `rake` to invoke testing tasks (See `Rakefile` for details):
 $ rake test:checkstyle
 ```
 
-Will run `foodcritic` and `rubocop`.
+Will run `foodcritic` and `cookstyle`.
 
 ##### Chefspec
 ```

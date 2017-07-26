@@ -9,5 +9,5 @@
 default['glances']['service'] = {
   RUN: false,
   DAEMON: '/usr/local/bin/glances',
-  DAEMON_ARGS: '-s'
+  DAEMON_ARGS: '-s',
 }
