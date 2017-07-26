@@ -4,21 +4,22 @@ require_relative 'spec_helper'
 
 describe 'glances::default' do
   let(:subject) do
-    ChefSpec::SoloRunner.new do |node|
-      node.set['glances']['config'] = { cpu: { user_careful: 50 } }
+    ChefSpec::SoloRunner.new(platform: 'debian',
+                             version: '9.0') do |node|
+      node.override['glances']['config'] = { cpu: { user_careful: 50 } }
     end.converge(described_recipe)
   end
 
-  it 'includes recipe[python]' do
-    expect(subject).to include_recipe('python')
+  it 'installs python_runtime[2]' do
+    expect(subject).to install_python_runtime('2')
   end
 
-  it 'installs python_pip[glances]' do
-    expect(subject).to install_python_pip('glances').with(version: nil)
+  it 'installs python_package[glances]' do
+    expect(subject).to install_python_package('glances').with(version: nil)
   end
 
-  it 'installs python_pip[pystache]' do
-    expect(subject).to install_python_pip('pystache')
+  it 'installs python_package[pystache]' do
+    expect(subject).to install_python_package('pystache')
   end
 
   it 'creates directory[/etc/glances]' do
@@ -42,13 +43,14 @@ describe 'glances::default' do
 
   context 'with package version' do
     let(:subject) do
-      ChefSpec::SoloRunner.new do |node|
-        node.set['glances']['version'] = '2.4.2'
+      ChefSpec::SoloRunner.new(platform: 'debian',
+                               version: '9.0') do |node|
+        node.override['glances']['version'] = '2.4.2'
       end.converge(described_recipe)
     end
 
-    it 'installs python_pip[glances]' do
-      expect(subject).to install_python_pip('glances').with(version: '2.4.2')
+    it 'installs python_package[glances]' do
+      expect(subject).to install_python_package('glances').with(version: '2.4.2')
     end
   end
 end

@@ -5,7 +5,7 @@ Installs/Configures [glances](http://nicolargo.github.io/glances/) on your serve
 ## Requirements
 
 #### cookbooks
-- `python`
+- `poise-python`
 
 #### Platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen:

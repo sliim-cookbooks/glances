@@ -6,14 +6,17 @@
 # Copyright 2015, Sliim
 #
 
-include_recipe 'python'
+python_runtime '2'
 
-python_pip 'glances' do
+python_package 'glances' do
   version node['glances']['version']
+  python '2'
 end
 
 node['glances']['extra_pip_packages'].each do |pkg|
-  python_pip pkg
+  python_package pkg do
+    python '2'
+  end
 end
 
 directory '/etc/glances' do

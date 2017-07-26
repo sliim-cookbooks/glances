@@ -10,7 +10,7 @@ version '1.0.6'
 recipe 'default', 'Installs/Configures glances'
 recipe 'service', 'Glances service for server setup'
 
-depends 'python'
+depends 'poise-python'
 
 supports 'ubuntu'
 supports 'debian'

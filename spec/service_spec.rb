@@ -4,9 +4,10 @@ require_relative 'spec_helper'
 
 describe 'glances::service' do
   let(:subject) do
-    ChefSpec::SoloRunner.new do |node|
-      node.set['glances']['service']['RUN'] = true
-      node.set['glances']['service']['DAEMON_ARGS'] = '--server'
+    ChefSpec::SoloRunner.new(platform: 'debian',
+                             version: '9.0') do |node|
+      node.override['glances']['service']['RUN'] = true
+      node.override['glances']['service']['DAEMON_ARGS'] = '--server'
     end.converge(described_recipe)
   end
 

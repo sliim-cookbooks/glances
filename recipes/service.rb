@@ -11,7 +11,7 @@ include_recipe 'glances'
 user 'glances' do
   home '/etc/glances'
   comment 'Glances monitoring'
-  supports manage_home: false
+  manage_home false
   system true
 end
 
