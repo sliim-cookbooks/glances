@@ -6,7 +6,7 @@ license 'Apache-2.0'
 description 'Installs/Configures glances'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 chef_version '>= 12.5' if respond_to?(:chef_version)
-version '1.0.6'
+version '1.1.0'
 
 recipe 'default', 'Installs/Configures glances'
 recipe 'service', 'Glances service for server setup'

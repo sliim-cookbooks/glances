@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 1.1.0
+- Chef 13 compat
+- Changed `python` dependency by `poise-python`
+
 ## 1.0.6
 - return 0 at the end of do_stop/do_start init scripts functions
 
