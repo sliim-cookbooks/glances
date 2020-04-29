@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-#
-# Cookbook Name:: glances
+# Cookbook:: glances
 # Recipe:: service
-#
-# Copyright 2015, Sliim
-#
+# Copyright:: 2015-2020 Sliim
 
 include_recipe 'glances'
 

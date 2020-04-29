@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-#
-# Cookbook Name:: glances
+# Cookbook:: glances
 # Attributes:: service
-#
-# Copyright 2015, Sliim
-#
+# Copyright:: 2015-2020 Sliim
 
 default['glances']['service'] = {
   RUN: false,

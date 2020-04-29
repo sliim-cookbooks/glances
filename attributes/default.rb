@@ -1,10 +1,6 @@
-# -*- coding: utf-8 -*-
-#
-# Cookbook Name:: glances
+# Cookbook:: glances
 # Attributes:: default
-#
-# Copyright 2015, Sliim
-#
+# Copyright:: 2015-2020 Sliim
 
 default['glances']['extra_pip_packages'] = %w(pystache)
 default['glances']['version'] = nil

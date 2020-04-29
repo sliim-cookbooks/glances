@@ -4,8 +4,7 @@ require_relative 'spec_helper'
 
 describe 'glances::default' do
   let(:subject) do
-    ChefSpec::SoloRunner.new(platform: 'debian',
-                             version: '9.0') do |node|
+    ChefSpec::SoloRunner.new do |node|
       node.override['glances']['config'] = { cpu: { user_careful: 50 } }
     end.converge(described_recipe)
   end
@@ -43,8 +42,7 @@ describe 'glances::default' do
 
   context 'with package version' do
     let(:subject) do
-      ChefSpec::SoloRunner.new(platform: 'debian',
-                               version: '9.0') do |node|
+      ChefSpec::SoloRunner.new do |node|
         node.override['glances']['version'] = '2.4.2'
       end.converge(described_recipe)
     end
