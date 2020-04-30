@@ -2,6 +2,16 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 2.0.0
+- Use spython cookbook to manage python installs
+- Remove poise-python dependency
+- Set default python runtime to 3
+- CI:
+  - Fix chefspec
+  - Fix cookstyle
+  - Use inspec instead of serverspec as kitchen verifier
+  - Enable kitchen docker in travis-ci
+
 ## 1.1.0
 - Chef 13 compat
 - Changed `python` dependency by `poise-python`

@@ -5,7 +5,7 @@ maintainer_email 'sliim@mailoo.org'
 license 'Apache-2.0'
 description 'Installs/Configures glances'
 chef_version '>= 13'
-version '1.1.0'
+version '2.0.0'
 
 depends 'spython'
 
