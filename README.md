@@ -1,4 +1,4 @@
-# glances Cookbook | [![Cookbook Version](https://img.shields.io/cookbook/v/glances.svg)](https://community.opscode.com/cookbooks/glances) [![Build Status](https://travis-ci.org/sliim-cookbooks/glances.svg?branch=master)](https://travis-ci.org/sliim-cookbooks/glances) 
+# glances Cookbook | [![Cookbook Version](https://img.shields.io/cookbook/v/glances.svg)](https://supermarket.chef.io/cookbooks/glances) [![Build Status](https://travis-ci.org/sliim-cookbooks/glances.svg?branch=master)](https://travis-ci.org/sliim-cookbooks/glances) 
 
 Installs/Configures [glances](http://nicolargo.github.io/glances/) on your server!
 
@@ -9,17 +9,11 @@ Installs/Configures [glances](http://nicolargo.github.io/glances/) on your serve
 
 #### Platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen:
-- `Ubuntu 12.04`
-- `Ubuntu 14.04`
-- `Debian 6`
-- `Debian 7`
-- `Debian 8`
+- `Ubuntu 16.04`
+- `Ubuntu 18.04`
 - `Debian 9`
-- `Centos 5`
-- `Centos 6`
+- `Debian 10`
 - `Centos 7`
-- `Fedora 20`
-- `Fedora 21`
 
 #### Recommended cookbooks
 - `apt` for debian/ubuntu platforms
