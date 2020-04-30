@@ -4,7 +4,7 @@
 
 default['glances']['extra_pip_packages'] = %w(pystache)
 default['glances']['version'] = ''
-default['glances']['python'] = '2'
+default['glances']['python'] = '3'
 
 default['glances']['config'] = {
   cpu: {

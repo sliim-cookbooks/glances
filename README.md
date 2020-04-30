@@ -26,7 +26,7 @@ The following platforms and versions are tested and supported using Opscode's te
 | ------------------------------- | ------- | -------------------------------------------- |
 | `[glances][extra_pip_packages]` | Array   | List of extra packages (default: [pystache]) |
 | `[glances][version]`            | String  | Glances package version (default: '')        |
-| `[glances][python]`             | String  | Python runtime (default: '2')                |
+| `[glances][python]`             | String  | Python runtime (default: '3')                |
 | `[glances][config]`             | Hash    | Glances configuration                        |
 
 #### glances::service
