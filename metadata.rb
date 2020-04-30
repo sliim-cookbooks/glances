@@ -4,10 +4,10 @@ maintainer 'Sliim'
 maintainer_email 'sliim@mailoo.org'
 license 'Apache-2.0'
 description 'Installs/Configures glances'
-chef_version '>= 12.5'
+chef_version '>= 13'
 version '1.1.0'
 
-depends 'poise-python'
+depends 'spython'
 
 supports 'ubuntu'
 supports 'debian'

@@ -3,7 +3,8 @@
 # Copyright:: 2015-2020 Sliim
 
 default['glances']['extra_pip_packages'] = %w(pystache)
-default['glances']['version'] = nil
+default['glances']['version'] = ''
+default['glances']['python'] = '2'
 
 default['glances']['config'] = {
   cpu: {

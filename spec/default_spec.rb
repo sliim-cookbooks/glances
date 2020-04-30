@@ -9,16 +9,19 @@ describe 'glances::default' do
     end.converge(described_recipe)
   end
 
-  it 'installs python_runtime[2]' do
-    expect(subject).to install_python_runtime('2')
+  it 'installs spython_runtime[2]' do
+    expect(subject).to install_spython_runtime('2')
   end
 
-  it 'installs python_package[glances]' do
-    expect(subject).to install_python_package('glances').with(version: nil)
+  it 'installs spython_package[glances]' do
+    expect(subject).to install_spython_package('glances')
+      .with(version: '',
+            runtime: '2')
   end
 
-  it 'installs python_package[pystache]' do
-    expect(subject).to install_python_package('pystache')
+  it 'installs spython_package[pystache]' do
+    expect(subject).to install_spython_package('pystache')
+      .with(runtime: '2')
   end
 
   it 'creates directory[/etc/glances]' do
@@ -47,8 +50,10 @@ describe 'glances::default' do
       end.converge(described_recipe)
     end
 
-    it 'installs python_package[glances]' do
-      expect(subject).to install_python_package('glances').with(version: '2.4.2')
+    it 'installs spython_package[glances]' do
+      expect(subject).to install_spython_package('glances')
+        .with(version: '2.4.2',
+              runtime: '2')
     end
   end
 end

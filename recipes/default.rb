@@ -2,16 +2,16 @@
 # Recipe:: default
 # Copyright:: 2015-2020 Sliim
 
-python_runtime '2'
+spython_runtime node['glances']['python']
 
-python_package 'glances' do
+spython_package 'glances' do
   version node['glances']['version']
-  python '2'
+  runtime node['glances']['python']
 end
 
 node['glances']['extra_pip_packages'].each do |pkg|
-  python_package pkg do
-    python '2'
+  spython_package pkg do
+    runtime node['glances']['python']
   end
 end
 

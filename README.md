@@ -5,7 +5,7 @@ Installs/Configures [glances](http://nicolargo.github.io/glances/) on your serve
 ## Requirements
 
 #### cookbooks
-- `poise-python`
+- `spython`
 
 #### Platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen:
@@ -31,7 +31,8 @@ The following platforms and versions are tested and supported using Opscode's te
 |               Key               |  Type   |                 Description                  |
 | ------------------------------- | ------- | -------------------------------------------- |
 | `[glances][extra_pip_packages]` | Array   | List of extra packages (default: [pystache]) |
-| `[glances][version]`            | String  | Glances package version (default: nil)       |
+| `[glances][version]`            | String  | Glances package version (default: '')        |
+| `[glances][python]`             | String  | Python runtime (default: '2')                |
 | `[glances][config]`             | Hash    | Glances configuration                        |
 
 #### glances::service
