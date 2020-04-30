@@ -14,5 +14,8 @@ Tests can be run with Rake:
 #### Cookstyle
 `bundle exec rake test:cookstyle`
 
+#### Chefspec
+`bundle exec rake test:chefspec`
+
 #### Kitchen
 `bundle exec rake test:kitchen`

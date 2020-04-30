@@ -224,44 +224,11 @@ This recipe is not compatible with Fedora.
 
 ## Testing
 
-You can use `rake` to invoke testing tasks (See `Rakefile` for details):
-
-##### Checkstyle
-```
-$ rake test:checkstyle
-```
-
-Will run `foodcritic` and `cookstyle`.
-
-##### Chefspec
-```
-$ rake test:chefspec
-```
-
-Will run unit tests with `ChefSpec`.
-
-##### Kitchen
-```
-$ rake test:kitchen
-```
-
-Will test all kitchen instances declared in `.kitchen.yml`.
-
-Docker driver is used for integration testing with `test-kitchen`. You will need to have `docker` installed to run integration testing, or adapt the existing `.kitchen.yml` for your driver.
-
-```
-$ kitchen list
-$ kitchen test [instance]
-```
+See [TESTING.md](TESTING.md)
 
 ## Contributing
 
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License and Authors
 
