@@ -13,8 +13,8 @@ describe 'glances::default' do
     expect(subject).to install_spython_runtime('3')
   end
 
-  it 'installs spython_package[glances]' do
-    expect(subject).to install_spython_package('glances')
+  it 'installs spython_package[Glances]' do
+    expect(subject).to install_spython_package('Glances')
       .with(version: '',
             runtime: '3')
   end
@@ -50,8 +50,8 @@ describe 'glances::default' do
       end.converge(described_recipe)
     end
 
-    it 'installs spython_package[glances]' do
-      expect(subject).to install_spython_package('glances')
+    it 'installs spython_package[Glances]' do
+      expect(subject).to install_spython_package('Glances')
         .with(version: '2.4.2',
               runtime: '3')
     end

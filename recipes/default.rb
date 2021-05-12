@@ -4,7 +4,7 @@
 
 spython_runtime node['glances']['python']
 
-spython_package 'glances' do
+spython_package 'Glances' do
   version node['glances']['version']
   runtime node['glances']['python']
 end
