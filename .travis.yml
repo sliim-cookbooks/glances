@@ -1,8 +1,0 @@
-language: ruby
-rvm:
-  - 2.5.7
-services:
-  - docker
-script:
-  - bundle exec rake
-  - bundle exec rake test:kitchen

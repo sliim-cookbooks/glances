@@ -1,4 +1,4 @@
-# glances Cookbook | [![Cookbook Version](https://img.shields.io/cookbook/v/glances.svg)](https://supermarket.chef.io/cookbooks/glances) [![Build Status](https://travis-ci.org/sliim-cookbooks/glances.svg?branch=master)](https://travis-ci.org/sliim-cookbooks/glances) 
+# glances Cookbook | [![Cookbook Version](https://img.shields.io/cookbook/v/glances.svg)](https://supermarket.chef.io/cookbooks/glances) 
 
 Installs/Configures [glances](http://nicolargo.github.io/glances/) on your server!
 
