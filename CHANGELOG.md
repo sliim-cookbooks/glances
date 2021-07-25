@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 2.0.1
+- Fix Glances package name (capitalized)
+
 ## 2.0.0
 - Use spython cookbook to manage python installs
 - Remove poise-python dependency
