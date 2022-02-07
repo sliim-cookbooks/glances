@@ -2,6 +2,8 @@
 # Recipe:: default
 # Copyright:: 2015-2020 Sliim
 
+include_recipe 'spython'
+
 spython_runtime node['glances']['python']
 
 spython_package 'Glances' do
