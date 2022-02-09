@@ -8,4 +8,5 @@ group :integration do
   cookbook 'locales',
            git: 'https://github.com/sliim-cookbooks/locales',
            ref: 'create-directory'
+  cookbook 'seven_zip', '3.1.2'
 end
