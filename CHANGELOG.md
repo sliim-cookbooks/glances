@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the glances cookbook.
 
+## 2.0.2
+- Fix for spython cookbook 0.4.0
+
 ## 2.0.1
 - Fix Glances package name (capitalized)
 
