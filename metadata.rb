@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 name 'glances'
 maintainer 'Sliim'
 maintainer_email 'sliim@mailoo.org'
