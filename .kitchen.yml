@@ -7,6 +7,10 @@ driver:
 provisioner:
   name: chef_zero
   chef_license: accept
+  product_name: chef
+  product_version: <%= ENV['KITCHEN_CHEF_VERSION'] || ENV['CHEF_VERSION'] || 'latest' %>
+  client_rb:
+    ohai.directory: /tmp/kitchen/ohai/cookbook_plugins
 
 verifier:
   name: inspec
@@ -17,12 +21,20 @@ platforms:
     run_list:
       - recipe[apt]
       - recipe[locales]
+    attributes:
+      spython:
+        "3":
+          pip_upgrade: ==20.3.4
   - name: ubuntu-18.04
     run_list:
       - recipe[apt]
   - name: debian-9
     run_list:
       - recipe[apt]
+    attributes:
+      spython:
+        "3":
+          pip_upgrade: ==20.3.4
   - name: debian-10
     run_list:
       - recipe[apt]

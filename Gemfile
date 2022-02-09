@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'chef', '~> 13'
+gem 'chef', "~> #{ENV['CHEF_VERSION'] || 14}"
 gem 'berkshelf'
 gem 'rake'
 
